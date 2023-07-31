@@ -13,7 +13,7 @@ route.get("/", ProductoController.getAllProductos);
 route.get("/:id", requiredScopes("read:productos"), ProductoController.getProductoById);
 
 // Crear un nuevo producto
-route.post("/",  ProductoController.createProducto);
+route.post("/", requiredScopes("write:productos"),  ProductoController.createProducto);
 
 // Actualizar un producto existente
 route.put("/:id", requiredScopes("write:productos"),  ProductoController.updateProductoById);
